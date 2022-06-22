@@ -7,10 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginok.jsp" method="post">
-		아이디 : <input type="text" name="id"><br>
-		비밀번호 : <input type="text" name="pw"><br>
-		<input type="submit" value="로그인">
-	</form>
+	<%
+		
+		if((String)session.getAttribute("id")==null){
+			%>
+				<form action="loginok.jsp" method="post">
+					아이디 : <input type="text" name="id"><br>
+					비밀번호 : <input type="text" name="pw"><br>
+					<input type="submit" value="로그인">
+				</form>
+			<%
+		}else{
+
+				String sid = (String)session.getAttribute("id");
+			%>
+				현재 <%= sid %>님 로그인 되있습니다.
+				<input type="button" value="로그아웃" onclick="location.href='logout.jsp'">
+			<%
+		}
+	%>
+	
+	
 </body>
 </html>

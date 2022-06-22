@@ -13,12 +13,13 @@
 		if(id.equals("a")&&pw.equals("1")){
 			session.setAttribute("id",id);
 			session.setAttribute("pw",pw);
-			out.println("로그인 성공");
-			out.println(session.getAttribute("id"));
+			out.println("로그인 성공<br>");
 		}else{
 			out.println("로그인 실패");
 
 		}
 	%>
+	<a href="session.jsp">세션으로</a><br>
+	<a href="login.jsp">로그인페이지로</a>
 </body>
 </html>
